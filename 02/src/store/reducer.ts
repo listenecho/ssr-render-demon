@@ -1,0 +1,4 @@
+
+const initState = {
+    history: history
+}
