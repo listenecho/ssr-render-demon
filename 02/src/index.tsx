@@ -9,7 +9,7 @@ import createStore from './store'
 
 
 const App = () => {
-  const initialState = (window as any).__INITIAL_STATE__ || {app: '初始化SSR'};
+  const initialState = (window as any).__INITIAL_STATE__ ;
   const store = createStore(initialState)
   
   return <Provider store={store}>

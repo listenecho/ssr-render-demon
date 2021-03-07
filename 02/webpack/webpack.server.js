@@ -66,7 +66,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 use: [
-                //   'css-hot-loader',
+                 'isomorphic-style-loader',
                   {
                     loader: MiniCssExtractPlugin.loader,
                    
