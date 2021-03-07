@@ -22,12 +22,10 @@ if(isProd) {
 app.use("/public", express.static(path.join(__dirname, "../public")));
 const serverToRender = (req, res) => {
     render.renderToString(req, {}).then(({error, html}) => {
-        console.log(html, 'html');
-        
         res.send(html);
     })
 }
-app.get('/', function (req, res) {
+app.get('*', function (req, res) {
    
   
     readyPromise.then(() => serverToRender(req, res  ))

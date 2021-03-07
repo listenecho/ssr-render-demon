@@ -2,17 +2,17 @@ import React from 'react'
 import ReactDom from 'react-dom';
 import { renderRoutes } from 'react-router-config';
 import router from '../src/router'
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { loadableReady } from "@loadable/component";
 
 
 
 const App = () => {
-    return <HashRouter>
+    return <BrowserRouter>
    <div>
         {renderRoutes(router)}
       </div>
-    </HashRouter>
+    </BrowserRouter>
 }
 const createApp = () => App() 
 console.log(4);

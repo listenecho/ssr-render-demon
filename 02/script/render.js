@@ -2,7 +2,7 @@
 const { ChunkExtractor, ChunkExtractorManager } = require("@loadable/server");
 const ReactDOMServer = require("react-dom/server");
 const React = require("react");
-
+const { matchRoutes } = require("react-router-config");
 class ServerRender {
     constructor(bundle, template, mainfest) {
         this.template = template;
@@ -25,11 +25,11 @@ class ServerRender {
     renderToString(request, staticContext ) {
         return new Promise((resolve, reject) => {
             const serverEntry = this.serverEntry;
-            console.log(serverEntry, 'serverEntryserverEntryserverEntry');
-            
             const createApp = serverEntry.createApp;
             const router = serverEntry.router;
-
+           
+            let matchs = matchRoutes(router, request.path);
+            console.log(matchs);
             const render = () => {
                 let component = createApp(request.url);
                 let extractor = new ChunkExtractor({ 
