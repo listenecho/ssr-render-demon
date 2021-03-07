@@ -3,23 +3,23 @@ import ReactDom from 'react-dom';
 import { renderRoutes } from 'react-router-config';
 import router from '../src/router'
 import { StaticRouter } from 'react-router-dom';
+import { Provider } from "react-redux";
+import createStore from './store'
 
 
-console.log(4444444);
 
-const App = () => {
-    return <StaticRouter>
-   <div>
-        {renderRoutes(router)}
-      </div>
-    </StaticRouter>
-  
+
+const createApp = (context: any, url: any, store: any) => {
+  return <Provider store={store}> <StaticRouter context={context} location={url}>
+    <div>
+      {renderRoutes(router)}
+    </div>
+  </StaticRouter>
+  </Provider>
 }
-const createApp = () => App()
 
 export {
+  createStore,
   createApp,
   router
 }
-// ReactDom.render(<App />, document.getElementById('root'));
-// export default App

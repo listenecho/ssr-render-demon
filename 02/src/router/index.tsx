@@ -1,13 +1,23 @@
-import { Switch, Router, Route, BrowserRouter, StaticRouter } from 'react-router-dom'
-import React from 'react'
+
 import Home from '../page/Home'
 import Mine from '../page/Mine'
 import News from '../page/News'
 import App from '../page/App'
+import { getHomeDataAction } from '../page/Home/store/action'
 export default [
     {
         component: App,
         routes: [
+            {
+
+                path: "/",
+                component: Home,
+                exact: true,
+                loadData: (store: any) => {
+                    return store.dispatch(getHomeDataAction())
+                }
+                // component: () => import('../page/Home')
+            },
             {
 
                 path: "/home",

@@ -23,6 +23,10 @@ app.use("/public", express.static(path.join(__dirname, "../public")));
 const serverToRender = (req, res) => {
     render.renderToString(req, {}).then(({error, html}) => {
         res.send(html);
+    }).catch(error => {
+        console.log(error);
+        
+        res.send('error' )
     })
 }
 app.get('*', function (req, res) {

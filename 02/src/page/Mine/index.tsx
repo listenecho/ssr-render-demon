@@ -7,7 +7,8 @@ class Mine extends React.Component {
     }
     render(){
         
-        return <h3>服务端渲染(Greate)</h3>
+        return <h3 onClick={() => console.log(7777)
+        }>服务端渲染(Greate)</h3>
     }
 }
   export default Mine

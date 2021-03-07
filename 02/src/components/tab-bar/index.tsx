@@ -14,7 +14,7 @@ export default class TabBarExample extends React.Component {
   render() {
     
     return (
-      <div style={{ position: 'fixed', height: '100vh', width: '100vw', bottom: 0 }}>
+      <div style={{ position: 'fixed', height: '100vh', width: '100vw', bottom: 0, zIndex: -1 }}>
         <div style={{
           display: 'flex',
           justifyContent: 'space-around'
